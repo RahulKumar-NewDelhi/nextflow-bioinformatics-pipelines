@@ -1,0 +1,18 @@
+---
+title: "`r toupper(params$sample_name)` Analysis"
+author: "Commander NGS"
+date: "`r Sys.Date()`"
+output: 
+  prettydoc::html_pretty:
+  theme: cayman
+highlight: github
+params:
+  sample_name: "FASTQ"
+---
+
+```{r setup, include=FALSE, echo= FALSE, comment=NA, warning= FALSE}
+library(ggplot2)
+library(plotly)
+library(dplyr)
+```
+# **Sample Analysis**

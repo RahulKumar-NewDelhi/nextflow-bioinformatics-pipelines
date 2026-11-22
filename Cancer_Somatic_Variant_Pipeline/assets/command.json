@@ -1,0 +1,3 @@
+{"command":"nextflow run {workflow} -params-file inputs.json -profile docker"
+}
+

@@ -1,0 +1,144 @@
+{
+  "platform": "illumina",
+  "tool": "somatic",
+  "cpus": 14,
+
+  "length": 20,
+  "quality": 30,
+
+  "workflow": "nextflow/local/Custom_Panel_Analysis",
+  "sampleSheet": "",
+  "outputLocation": "",
+  "databasePath": "",
+
+  "reference": "",
+  "bed": "",
+  "dbsnp": "",
+
+  "snpeffDB": "GRCh37.75",
+  "clinvarDB": "",
+  "tertiaryDB": "",
+  "tumorType": "",
+
+  "matchedNormal": false,
+  "germlineResource": "",
+  "pon": "",
+
+  "umi": false,
+  "umiReadStructure": "5M2S+T 5M2S+T",
+  "umiDuplex": true,
+
+  "metadata": {
+    "platform": {
+      "ui": "select",
+      "options": ["nanopore", "illumina"]
+    },
+
+    "tool": {
+      "ui": "select",
+      "options_by_platform": {
+        "nanopore": ["somatic"],
+        "illumina": ["somatic"]
+      }
+    },
+
+    "cpus": {
+      "ui": "number",
+      "min": 1,
+      "max": 1000
+    },
+
+    "length": {
+      "ui": "number",
+      "min": 0,
+      "max": 99
+    },
+
+    "quality": {
+      "ui": "number",
+      "min": 0,
+      "max": 99
+    },
+
+    "workflow": { "hidden": true },
+    "sampleSheet": { "hidden": true },
+    "databasePath": { "hidden": true },
+
+    "outputLocation": {
+      "ui": "input"
+    },
+
+    "reference": {
+      "ui": "file-picker",
+      "mode": "file_or_directory",
+      "label": "Reference (FASTA)"
+    },
+
+    "bed": {
+      "ui": "file-picker",
+      "mode": "file_or_directory",
+      "label": "Panel BED file"
+    },
+
+    "dbsnp": {
+      "ui": "file-picker",
+      "mode": "file_or_directory",
+      "label": "dbSNP VCF (used for BQSR; not needed when UMI is on)"
+    },
+
+    "snpeffDB": {
+      "ui": "select",
+      "options": ["GRCh37.75", "GRCh38.99"],
+      "label": "SnpEff Database"
+    },
+
+    "clinvarDB": {
+      "ui": "file-picker",
+      "mode": "file_or_directory",
+      "label": "ClinVar Database (VCF / file)"
+    },
+
+    "tertiaryDB": {
+      "ui": "file-picker",
+      "mode": "file_or_directory",
+      "label": "Tertiary analysis database (tertiary.db, leave empty to skip)"
+    },
+
+    "tumorType": {
+      "ui": "input",
+      "label": "Tumour type (optional, stored with the sample)"
+    },
+
+    "matchedNormal": {
+      "ui": "checkbox",
+      "label": "Matched tumor-normal Mutect2 (requires patient_id/sample_type columns in the sample sheet)"
+    },
+
+    "germlineResource": {
+      "ui": "file-picker",
+      "mode": "file_or_directory",
+      "label": "Germline resource (af-only-gnomad.vcf.gz; required if matched tumor-normal is enabled)"
+    },
+
+    "pon": {
+      "ui": "file-picker",
+      "mode": "file_or_directory",
+      "label": "Panel of normals (pon.vcf.gz, optional)"
+    },
+
+    "umi": {
+      "ui": "checkbox",
+      "label": "UMI consensus mode (fgbio; replaces MarkDuplicates and BQSR)"
+    },
+
+    "umiReadStructure": {
+      "ui": "input",
+      "label": "UMI read structure, one per FASTQ (e.g. 8M13S+T +T)"
+    },
+
+    "umiDuplex": {
+      "ui": "checkbox",
+      "label": "Duplex UMIs (UMI on both ends of the molecule)"
+    }
+  }
+}
