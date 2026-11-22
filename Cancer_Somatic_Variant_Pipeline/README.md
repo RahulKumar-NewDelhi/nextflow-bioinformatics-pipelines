@@ -1,11 +1,11 @@
 ---
-name: Custom_Panel_Analysis
+name: Cancer_Somatic_Analysis
 description: Identify variants from disease panels
 categories:
   - Variant Discovery
 ---
 
-# Custom Panel Analysis
+# Cancer Somatic Analysis
 
 Somatic (tumour) variant analysis for **targeted gene panels** in human
 samples. Reads are aligned to the human reference, variants are called only
